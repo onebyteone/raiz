@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo - Raíz</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        header .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+        .catalog-header {
+            background-color: #e67e22;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .catalog-header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .catalog-container {
+            padding: 2rem 0;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .content-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        .content-card:hover {
+            transform: translateY(-5px);
+        }
+        .content-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .content-info {
+            padding: 15px;
+        }
+        .content-info h3 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+        .content-info p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .tags {
+            margin-top: 10px;
+        }
+        .tag {
+            display: inline-block;
+            background-color: #ecf0f1;
+            color: #7f8c8d;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+        footer {
+            background-color: #34495e;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="container">
+        <div class="logo">
+            <img src="https://images.seeklogo.com/logo-png/33/1/raiz-logo-png_seeklogo-337158.png" alt="Logo de Raíz">
+            Raíz
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#">Comunidad</a>
+            <a href="#">Crea con Nosotros</a>
+            <a href="#">Iniciar sesión / Registro</a>
+        </nav>
+    </header>
+
+    <section class="catalog-header">
+        <div class="container">
+            <h1>Catálogo completo</h1>
+            <p>Descubre historias que viajan de la selva al desierto, contadas por quienes las viven.</p>
+        </div>
+    </section>
+
+    <main class="container catalog-container">
+        
+        <div class="content-card">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/044/420/003/small/peru-woman-in-traditional-costume-and-hat-displaying-indigenous-culture-and-andean-heritage-photo.jpeg" alt="Warmi">
+            <div class="content-info">
+                <h3>Warmi</h3>
+                <p>Documental sobre parteras andinas. Una mirada íntima a la sabiduría ancestral.</p>
+                <div class="tags">
+                    <span class="tag">Documental</span>
+                    <span class="tag">Andes</span>
+                    <span class="tag">Quechua</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <img src="https://www.fundacionaquae.org/wp-content/uploads/2019/07/rio-amazonas-1024x685.jpg" alt="Sonidos del agua">
+            <div class="content-info">
+                <h3>Sonidos del agua</h3>
+                <p>Serie que explora la música ancestral de las comunidades de la Amazonía.</p>
+                <div class="tags">
+                    <span class="tag">Serie</span>
+                    <span class="tag">Música</span>
+                    <span class="tag">Amazonas</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <img src="https://unamglobal.unam.mx/wp-content/uploads/2023/12/revitalizan-nahuatl2-1024x514.jpg" alt="El Maíz no muere">
+            <div class="content-info">
+                <h3>El Maíz no muere</h3>
+                <p>Un corto animado que narra la historia del maíz en la cultura Náhuatl.</p>
+                <div class="tags">
+                    <span class="tag">Corto</span>
+                    <span class="tag">Animación</span>
+                    <span class="tag">Náhuatl</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <img src="https://www.bancomundial.org/content/dam/photos/780x439/2023/may/LAC-ESR-SPA.png">
+            <div class="content-info">
+                <h3>El Grito del Pacífico</h3>
+                <p>Documental sobre la lucha por la tierra de las comunidades afrocolombianas.</p>
+                <div class="tags">
+                    <span class="tag">Documental</span>
+                    <span class="tag">Afrodescendiente</span>
+                    <span class="tag">Colombia</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <img src="https://www.ecured.cu/images/2/2c/Atacamec3b1os.jpg" alt="Voces del Atacama">
+            <div class="content-info">
+                <h3>Voces del Atacama</h3>
+                <p>Serie que rescata los relatos de los pueblos del desierto chileno.</p>
+                <div class="tags">
+                    <span class="tag">Serie</span>
+                    <span class="tag">Relatos</span>
+                    <span class="tag">Desierto</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-card">
+            <img src="https://relatosehistorias.mx/sites/default/files/styles/relato_1200x565/public/15.jpeg?itok=5Mbzznnu" alt="La Abuela Tejera">
+            <div class="content-info">
+                <h3>La Abuela Tejera</h3>
+                <p>Cortometraje sobre una maestra artesana de Oaxaca, México.</p>
+                <div class="tags">
+                    <span class="tag">Corto</span>
+                    <span class="tag">Artesanía</span>
+                    <span class="tag">Oaxaca</span>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Aviso Legal</a> |
+                <a href="#">Política de Privacidad</a> |
+                <a href="#">Términos y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

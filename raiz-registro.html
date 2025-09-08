@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro y Planes - Raíz</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --secondary-color: #2980b9;
+            --background-color: #f4f4f4;
+            --card-background: white;
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            line-height: 1.6;
+            background-color: var(--background-color);
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .registration-section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .registration-section h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+        }
+
+        .form-container {
+            background-color: var(--card-background);
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: auto;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            background-color: #f39c12;
+        }
+
+        /* Plan Selection Section Styles */
+        .plans-section {
+            padding: 4rem 0;
+            background-color: #ecf0f1;
+            text-align: center;
+        }
+
+        .plans-section h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+        }
+
+        .plans-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .plan-card {
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .plan-card.popular {
+            border: 3px solid var(--accent-color);
+            transform: scale(1.05);
+        }
+
+        .plan-card .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .plan-card h3 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .plan-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .plan-card .price span {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .plan-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .plan-card ul li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-card ul li::before {
+            content: '✔️';
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .btn-select {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-select:hover {
+            background-color: #3498db;
+        }
+
+        .note {
+            margin-top: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #34495e;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="container">
+        <div class="logo">
+            <img src="https://images.seeklogo.com/logo-png/33/1/raiz-logo-png_seeklogo-337158.png" alt="Logo de Raíz">
+            Raíz
+        </div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="catalogo.html">Catálogo</a>
+            <a href="#">Comunidad</a>
+            <a href="#">Crea con Nosotros</a>
+            <a href="#">Iniciar sesión / Registro</a>
+        </nav>
+    </header>
+
+    <!-- Registration Form Section -->
+    <section class="registration-section">
+        <div class="container">
+            <h1>Crea tu cuenta Raíz</h1>
+            <div class="form-container">
+                <form action="#">
+                    <div class="form-group">
+                        <label for="name">Nombre completo</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contraseña</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="btn-submit">Continuar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Selection Section -->
+    <section class="plans-section">
+        <div class="container">
+            <h2>Elige el plan que resuena contigo</h2>
+            <div class="plans-grid">
+                
+                <!-- Plan 1: Mensual -->
+                <div class="plan-card">
+                    <h3>Plan Mensual</h3>
+                    <div class="price">$8.99<span>/mes</span></div>
+                    <ul>
+                        <li>Acceso a todo el catálogo</li>
+                        <li>Contenido en HD</li>
+                        <li>Subtítulos en 5 idiomas</li>
+                        <li>Crea perfiles para 2 usuarios</li>
+                    </ul>
+                    <button class="btn-select">Seleccionar</button>
+                </div>
+
+                <!-- Plan 2: Anual (Popular) -->
+                <div class="plan-card popular">
+                    <span class="badge">Más Popular</span>
+                    <h3>Plan Anual</h3>
+                    <div class="price">$89.99<span>/año</span></div>
+                    <ul>
+                        <li> Todo lo del Plan Mensual</li>
+                        <li>Ahorra un 15%</li>
+                        <li>Acceso anticipado a estrenos</li>
+                        <li>Un año de historias ilimitadas</li>
+                    </ul>
+                    <button class="btn-select">Seleccionar</button>
+                </div>
+
+                <!-- Plan 3: Colaborativo -->
+                <div class="plan-card">
+                    <h3>Plan Colaborativo</h3>
+                    <div class="price">$14.99<span>/mes</span></div>
+                    <ul>
+                        <li>Todo lo del Plan Anual</li>
+                        <li>Apoyo directo a creadores</li>
+                        <li>Material exclusivo detrás de cámaras</li>
+                        <li>Un voto en la selección de nuevos proyectos</li>
+                    </ul>
+                    <button class="btn-select">Seleccionar</button>
+                </div>
+
+            </div>
+            <p class="note">Todos los planes incluyen un período de prueba gratuito de 7 días. Cancela en cualquier momento.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Aviso Legal</a> |
+                <a href="#">Política de Privacidad</a> |
+                <a href="#">Términos y Condiciones</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
