@@ -182,6 +182,119 @@
             border-radius: 5px;
             cursor: pointer;
         }
+        
+        /* Plan Selection Section Styles */
+        .plans-section {
+            padding: 4rem 0;
+            background-color: #ecf0f1;
+            text-align: center;
+        }
+
+        .plans-section h2 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 3rem;
+        }
+
+        .plans-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .plan-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .plan-card.popular {
+            border: 3px solid #e67e22;
+            transform: scale(1.05);
+        }
+
+        .plan-card .badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: #e67e22;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .plan-card h3 {
+            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .plan-card .price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #2980b9;
+            margin-bottom: 1rem;
+        }
+        
+        .plan-card .price span {
+            font-size: 1rem;
+            color: #666;
+            font-weight: normal;
+        }
+
+        .plan-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .plan-card ul li {
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .plan-card ul li::before {
+            content: '✔️';
+            margin-right: 10px;
+            color: #e67e22;
+        }
+
+        .btn-select {
+            background-color: #2980b9;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-select:hover {
+            background-color: #3498db;
+        }
+
+        .plans-note {
+            margin-top: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
@@ -194,6 +307,7 @@
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="./raiz-catalogo.html">Catálogo</a>
+            <a href="#planes">Planes</a>
             <a href="#comunidad">Comunidad</a>
             <a href="#crea">Crea con Nosotros</a>
             <a href="./raiz-registro.html">Iniciar sesión / Registro</a>
@@ -253,6 +367,57 @@
                     <p>Parte de tu suscripción apoya a creadores locales</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Plan Selection Section -->
+    <section class="plans-section" id="planes">
+        <div class="container">
+            <h2>Elige el plan que resuena contigo</h2>
+            <div class="plans-grid">
+                
+                <!-- Plan 1: Mensual -->
+                <div class="plan-card">
+                    <h3>Plan Mensual</h3>
+                    <div class="price">$8.99<span>/mes</span></div>
+                    <ul>
+                        <li>Acceso a todo el catálogo</li>
+                        <li>Contenido en HD</li>
+                        <li>Subtítulos en 5 idiomas</li>
+                        <li>Crea perfiles para 2 usuarios</li>
+                    </ul>
+                    <button class="btn-select">Seleccionar</button>
+                </div>
+
+                <!-- Plan 2: Anual (Popular) -->
+                <div class="plan-card popular">
+                    <span class="badge">Más Popular</span>
+                    <h3>Plan Anual</h3>
+                    <div class="price">$89.99<span>/año</span></div>
+                    <ul>
+                        <li> Todo lo del Plan Mensual</li>
+                        <li>Ahorra un 15%</li>
+                        <li>Acceso anticipado a estrenos</li>
+                        <li>Un año de historias ilimitadas</li>
+                    </ul>
+                    <button class="btn-select">Seleccionar</button>
+                </div>
+
+                <!-- Plan 3: Colaborativo -->
+                <div class="plan-card">
+                    <h3>Plan Colaborativo</h3>
+                    <div class="price">$14.99<span>/mes</span></div>
+                    <ul>
+                        <li>Todo lo del Plan Anual</li>
+                        <li>Apoyo directo a creadores</li>
+                        <li>Material exclusivo detrás de cámaras</li>
+                        <li>Un voto en la selección de nuevos proyectos</li>
+                    </ul>
+                    <button class="btn-select">Seleccionar</button>
+                </div>
+
+            </div>
+            <p class="plans-note">Todos los planes incluyen un período de prueba gratuito de 7 días. Cancela en cualquier momento.</p>
         </div>
     </section>
 
