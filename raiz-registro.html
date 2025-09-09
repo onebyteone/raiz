@@ -341,5 +341,21 @@
         </div>
     </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('registrationForm');
+            const plansSection = document.querySelector('.plans-section');
+
+            form.addEventListener('submit', (e) => {
+                // Previene el envío del formulario, ya que es un MVP sin backend.
+                e.preventDefault();
+                
+                // Desplaza la vista a la sección de planes de forma suave.
+                plansSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
 </body>
+
 </html>
